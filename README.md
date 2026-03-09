@@ -1,25 +1,66 @@
 # Poker Hand Evaluator
 
-Этот проект содержит функцию `bestHands`, которая принимает массив покерных комбинаций и определяет победителя среди них.  
+A JavaScript implementation for evaluating poker hands and determining the winning combination.
 
-## Описание
+The project exposes a function `bestHands` that takes an array of poker hands and returns the best one(s) according to standard poker rules.
 
-Функция анализирует руки игроков и распределяет их по классам покерных комбинаций:
+---
 
-- **Royal Flush (Флеш-рояль)** — T♥ K♥ Q♥ J♥ 10♥  
-- **Straight Flush (Стрит-флеш)** — 5 карт одной масти по порядку  
-- **Four of a Kind (Каре)** — 4 карты одного номинала  
-- **Full House (Фулл-хаус)** — 3 карты одного номинала + 2 карты другого номинала  
-- **Flush (Флеш)** — 5 карт одной масти  
-- **Straight (Стрит)** — 5 карт по порядку  
-- **Three of a Kind (Тройка)** — 3 карты одного номинала  
-- **Two Pair (Две пары)** — 2 пары карт разных номиналов  
-- **One Pair (Пара)** — 2 карты одного номинала  
-- **High Card (Старшая карта)** — если нет других комбинаций  
+## 🚀 Tech Stack
 
-Функция возвращает массив с одной или несколькими лучшими руками.
+* JavaScript
+* Node.js
+* Jest
+* ESLint
 
-## Использование
+---
+
+## ✨ Features
+
+* Evaluates multiple poker hands
+* Detects all standard poker combinations
+* Returns one or multiple winning hands in case of a tie
+* Includes automated tests
+
+---
+
+## ♠ Poker Hand Rankings
+
+The algorithm evaluates hands according to the standard poker ranking:
+
+| Rank | Combination     | Example         |
+| ---- | --------------- | --------------- |
+| 1    | Royal Flush     | T♥ K♥ Q♥ J♥ 10♥ |
+| 2    | Straight Flush  | 9♠ 8♠ 7♠ 6♠ 5♠  |
+| 3    | Four of a Kind  | 3♥ 3♦ 3♣ 3♠     |
+| 4    | Full House      | 4♠ 4♦ 4♥ 9♣ 9♠  |
+| 5    | Flush           | A♥ J♥ 9♥ 5♥ 2♥  |
+| 6    | Straight        | 8♠ 7♦ 6♣ 5♥ 4♠  |
+| 7    | Three of a Kind | Q♠ Q♦ Q♥ 7♣ 3♦  |
+| 8    | Two Pair        | K♠ K♦ 6♥ 6♣ 2♠  |
+| 9    | One Pair        | J♠ J♦ 8♣ 5♥ 3♠  |
+| 10   | High Card       | A♠ K♦ 9♣ 6♥ 3♠  |
+
+---
+
+## 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/poker-hand-evaluator.git
+cd poker-hand-evaluator
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+---
+
+## ▶ Usage
 
 ```javascript
 import { bestHands } from './path/to/bestHands.js';
@@ -31,4 +72,45 @@ const hands = [
 ];
 
 const winners = bestHands(hands);
-console.log(winners); // ['A♥ K♥ Q♥ J♥ 10♥']
+
+console.log(winners);
+// ['A♥ K♥ Q♥ J♥ 10♥']
+```
+
+The function returns an array with the best hand or multiple hands if there is a tie.
+
+---
+
+## 🧪 Available Scripts
+
+| Script            | Description                                                        |
+| ----------------- | ------------------------------------------------------------------ |
+| **npm test**      | Runs all tests using Jest.                                         |
+| **npm run watch** | Runs Jest in watch mode for continuous testing during development. |
+| **npm run lint**  | Runs ESLint to check code quality and style.                       |
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+  bestHands.js
+  helpers/
+tests/
+  bestHands.test.js
+```
+
+---
+
+## 🧠 How it Works
+
+The algorithm:
+
+1. Parses each hand into ranks and suits
+2. Classifies the hand into a poker combination
+3. Assigns a ranking value
+4. Compares all hands
+5. Returns the best hand(s)
+
+---
