@@ -48,8 +48,8 @@ The algorithm evaluates hands according to the standard poker ranking:
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/poker-hand-evaluator.git
-cd poker-hand-evaluator
+git clone https://github.com/lepa15/poker
+cd poker
 ```
 
 Install dependencies:
@@ -88,18 +88,6 @@ The function returns an array with the best hand or multiple hands if there is a
 | **npm test**      | Runs all tests using Jest.                                         |
 | **npm run watch** | Runs Jest in watch mode for continuous testing during development. |
 | **npm run lint**  | Runs ESLint to check code quality and style.                       |
-
----
-
-## 📂 Project Structure
-
-```
-src/
-  bestHands.js
-  helpers/
-tests/
-  bestHands.test.js
-```
 
 ---
 
